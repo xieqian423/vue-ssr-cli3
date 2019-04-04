@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="./assets/logo.png">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import titleMixin from './title-mixin'
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  name: 'App',
+  mixins: [titleMixin],
+   data () {
+    return {
+      title: 'item title'
+    }
+  },
+  title () {
+    // return (this.item && this.item.title) ? this.item.title : 'not found title'
+    return 'item-title1'
   }
 }
 </script>
